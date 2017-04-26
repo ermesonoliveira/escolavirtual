@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="estilos.css" />
+	<title>EVD- Escola Virtual à Distância</title>
+</h:head>
+<h:body>
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north">
+			<h:outputLabel value="Login" />
+			
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:form>
+			<h:commandLink value="Realizar Cadastro" action="escolhaCadastro.xhtml" />
+			<br></br>
+			<br></br>
+				<h:panelGrid columns="2">
+					
+					<h:outputLabel value="E-mail:* "/>
+					<h:inputText size="40" maxlength="40" value="#{MBLogar.usuario.email}" />
+					<h:outputLabel value="senha: *" />
+					<h:inputSecret size="40" maxlength="40"  value="#{MBLogar.usuario.senha}" />
+		
+				</h:panelGrid>
+				<br></br>
+			    <h:panelGrid columns="3">
+				<p:commandButton action="#{MBLogar.efetuarLogin}" value="Entrar" onclick="PF('dlg3').show()"/>
+				<p:dialog header="Alerta!!" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+    			<h:outputText value="Email ou senha incorreta!!" />
+				</p:dialog>
+				<p:commandButton  value="Sair" onclick="history.back()"/>
+				</h:panelGrid>
+			</h:form>
+
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

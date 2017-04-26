@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	>
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>EVD- Escola Virtual à Distância</title>
+	<h:outputStylesheet library="css" name="estilos.css" />
+</h:head>
+<h:body>
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north">
+
+			<h:outputLabel value="DADOS PESSOAIS" />
+
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Nome: *"/>
+					<h:inputText size="40" maxlength="40" value="#{MBUsuario.usuario.nome}" />
+					<h:outputLabel value="E-mail *" />
+					<h:inputText size="40" maxlength="40" value="#{MBUsuario.usuario.email}" />
+					<h:outputLabel value="Senha: *"/>
+					<h:inputSecret value="#{MBUsuario.usuario.senha}"/>
+					<h:outputLabel value="CPF: *"/>
+					<h:inputText size="40" maxlength="40" value="#{MBUsuario.usuario.cpf}"/>
+					<h:outputLabel value="Telefone: *" />
+					<h:inputText size="40" maxlength="40" value="#{MBUsuario.usuario.telefone}"/>
+					<h:outputLabel value="Escola *" />
+					<p:selectOneMenu value="#{MBUsuario.usuario.escola.id}">
+						<f:selectItem itemValue="" itemLabel="Selecione Sua escola"/>
+						<f:selectItems value="#{MBUsuario.listaEscola}" var="item" 
+						itemValue="#{item.id}" itemLabel="#{item.nome}"/>
+					</p:selectOneMenu>
+					<h:outputLabel value="Usuário *" />
+					<p:selectOneMenu value="#{MBUsuario.usuario.tipo.id}">
+						<f:selectItem itemValue="" itemLabel="Tipo de usuário"/>
+						<f:selectItems value="#{MBUsuario.listaTipo}" var="item" 
+						itemValue="#{item.id}" itemLabel="#{item.descricao}"/>
+					</p:selectOneMenu>
+
+				</h:panelGrid>
+				<h:panelGrid columns="2">
+				<p:commandButton action="#{MBUsuario.novo}" value="Salvar"/>
+				<p:commandButton onclick="history.back()" value="Voltar" />
+				</h:panelGrid>
+			</h:form>
+
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

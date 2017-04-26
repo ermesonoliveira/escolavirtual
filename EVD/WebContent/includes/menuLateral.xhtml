@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+
+			<p:graphicImage width="80" height="80" />
+			<h:form>
+				<p:growl autoUpdate="true" />
+				<p:panelMenu>
+					<p:submenu label="Grupos">
+						<p:menuitem value="Meus Grupos" />
+						<p:menuitem value="Criar Grupos" />
+						<p:menuitem value="Pesquisar Grupos" />
+					</p:submenu>
+					<p:submenu label="Fóruns">
+						<p:menuitem value="Meus Fóruns" />
+						<p:menuitem value="Criar Fórum" />
+						<p:menuitem value="Pesquisar Fóruns" />
+					</p:submenu>
+					<p:submenu label="Turma">
+						<p:menuitem value="Minhas Turmas" />
+						<p:menuitem value="Criar Turma" />
+						<p:menuitem value="Pesquisar Turmas" />
+					</p:submenu>
+
+				</p:panelMenu>
+			</h:form>
+
+</ui:composition>
